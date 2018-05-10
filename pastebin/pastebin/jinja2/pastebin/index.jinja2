@@ -15,4 +15,19 @@
     <p>Linguagens reconhecidas: Python, Javascript e Outros</p>
     <p>Existem questões ocultas! Procure no código</p>
   </main>
+
+
+{% block form %}
+<form method="post">
+  <input type="hidden" name="csrfmiddlewaretoken" value="{{csrf_token}}">
+  Titulo:<br>
+  <input type="text" name="titulo"><br>
+  <input type="radio" name="linguagem" value="Python"> Python<br>
+  <input type="radio" name="linguagem" value="Javascript"> Javascript<br>
+  <input type="radio" name="linguagem" value="Outros"> Outros<br>
+  Conteúdo:<br>
+  <textarea name="conteudo" cols="60" rows="10"></textarea><br>
+  <button type="submit"> submit</button>
+</form>
+{% endblock %}
 {% endblock %}
